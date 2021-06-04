@@ -1,29 +1,31 @@
-const userModel = require('./../../../db/models/user');
+const { User } = require("../../../db/models/user");
 
 const register = (req, res) => {
-	const { firstName, lastName, age, phoneNumber, email, password,gender , role } = req.body;
+  const { firstName, lastName, age, phoneNumber, email, password, gender,role } =
+    req.body;
 
-	const user = new userModel({
-		firstName,
-		lastName,
-		age,
-		phoneNumber,
-		email,
-		password,
-        gender ,
-		role,
-	});
+  const user = new User({
+    firstName,
+    lastName,
+    age,
+    phoneNumber,
+    email,
+    password,
+    gender,
+	role,
+  });
 
-	user
-		.save()
-		.then((result) => {
-			res.status(201).json(result);
-		})
-		.catch((err) => {
-			res.send(err);
-		});
+  user
+    .save()
+    .then((result) => {
+		
+      res.status(201).json(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 };
 
 module.exports = {
-	register,
+  register,
 };
