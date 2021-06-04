@@ -4,6 +4,11 @@ const db = require('./db/db');
 
 const app = express();
 
+//built-in middlewares
+app.use(express.json());
+
+
+
 //routers
 
 // ================ Hasan start ===============
@@ -15,8 +20,7 @@ app.use(loginRouter)
 
 // ================ Hasan end ================
 
-//built-in middlewares
-app.use(express.json());
+
 
 //third-party middleware
 app.use(cors());
@@ -24,6 +28,6 @@ app.use(cors());
 //app routers
 
 const PORT = process.env.PORT || 5000;
-app.use(PORT, () => {
+app.listen(PORT, () => {
 	console.log(`Server On ${PORT}`);
 });
