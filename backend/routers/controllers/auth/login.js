@@ -8,7 +8,7 @@ const login = (req, res) => {
   User.authenticateBasic(email, password)
     .then((result) => {
       if (result[1] === 200)
-        return res.status(result[1]).json({ Token: result[0] });
+        return res.status(result[1]).json({ Token: result[0],userId:result[2] });
 
       res.status(result[1]).json(result[0]);
     })
