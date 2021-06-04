@@ -4,6 +4,7 @@ const specialties = new mongoose.Schema({
   name: { type: String, required: true },
 
   internalId: Number,
+
 });
 
 const insurance = new mongoose.Schema({
