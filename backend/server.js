@@ -5,6 +5,13 @@ const db = require('./db/db');
 const app = express();
 
 //routers
+const loginRouter = require('./routers/routes/auth/login')
+app.use(loginRouter)
+
+
+
+
+
 
 //built-in middlewares
 app.use(express.json());
