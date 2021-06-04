@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const specialties = new mongoose.Schema({
     name : { type: String, required: true },
-    internalId:  Number 
+    internalId: Number
     
 });
 
