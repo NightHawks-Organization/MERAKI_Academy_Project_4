@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// Hashing password and lowering case of email
+users.pre('save', async function () {
+	this.email = this.email.toLowerCase();
+	this.password = await bcrypt.hash(this.password, 10);
+});
 
 const users = new mongoose.Schema({
     firstName: { type: String, required: true },
@@ -14,13 +19,7 @@ const users = new mongoose.Schema({
     role: { type: mongoose.Schema.ObjectId, ref: "Role" }
 });
 
-const roles = new mongoose.Schema({
-    role: String,
-    permissions: [String]
-});
-
 const User1 = mongoose.model("User", users);
-const role1 = mongoose.model("Role", roles);
 
 module.exports.User = User1;
-module.exports.Role = role1;
+

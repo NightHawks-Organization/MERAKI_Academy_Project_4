@@ -15,6 +15,6 @@ app.use(cors());
 //app routers
 
 const PORT = process.env.PORT || 5000;
-app.use(PORT, () => {
+app.listen(PORT, () => {
 	console.log(`Server On ${PORT}`);
 });
