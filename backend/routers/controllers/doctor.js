@@ -24,11 +24,26 @@ const addDoctor = (req, res) => {
 const getAllDoctors = (req, res) => {
   Doctor.find({})
     .then((result) => {
-      console.log(result);
       res.status(200).json(result);
     })
     .catch((err) => {
       res.send(err);
     });
 };
-module.exports = { addDoctor, getAllDoctors };
+
+const deleteDoctorById = (req, res) => {
+  const id = req.params.id;
+
+  Doctor.findByIdAndDelete(id)
+    .then((result) => {
+      res.status(200).json({
+        success: true,
+        message: `Success Delete doctor with id => ${id}`,
+      });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+module.exports = { addDoctor, getAllDoctors,deleteDoctorById };
