@@ -6,9 +6,10 @@ const {createNewAppointment , getAllAppointments , deleteAppointmentById } = req
 
 appointmentsRouter.post("/", createNewAppointment);
 appointmentsRouter.get("/", getAllAppointments);
-appointmentsRouter.delete("/", deleteAppointmentById);
+appointmentsRouter.delete("/:id", deleteAppointmentById);
 
 module.exports = appointmentsRouter;
+
 
 
 // ================ this code in server.js ===============================
@@ -16,4 +17,5 @@ const appointmentsRouter = require("./routers/routes/appointment");
 
 app.use("/appointment", appointmentsRouter);
 // ======================================================================
+
 

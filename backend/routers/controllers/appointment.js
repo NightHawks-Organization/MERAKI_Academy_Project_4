@@ -21,7 +21,6 @@ const createNewAppointment = (req, res) => {
     });
 };
 
-
 const getAllAppointments = (req, res) => {
   Appointments.find({})
     .then((result) => {
@@ -32,24 +31,18 @@ const getAllAppointments = (req, res) => {
     });
 };
 
-
 const deleteAppointmentById = (req, res) => {
-  
-    Appointments.findByIdAndDelete(req.params.id)
-		.then((result) => {
-			res.status(200).json({
-				success: true,
-				message: `Success Delete Appointment with id => ${req.params.id}`,
-			});
-		})
-		.catch((err) => {
-			res.send(err);
-		});
-  };
-  
-
-
-
+  Appointments.findByIdAndDelete(req.params.id)
+    .then((result) => {
+      res.status(200).json({
+        success: true,
+        message: `Success Delete Appointment with id => ${req.params.id}`,
+      });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 
 module.exports = {
   createNewAppointment,
