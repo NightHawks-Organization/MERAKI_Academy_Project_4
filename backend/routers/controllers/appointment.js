@@ -1,5 +1,4 @@
 const { Appointments } = require("../../db/models/Appointment");
-const appointmentsRouter = require("../routes/appointment");
 
 const createNewAppointment = (req, res) => {
   const { date, doctor, user, specialty } = req.body;
@@ -63,9 +62,30 @@ const updateAppointmentById = (req, res) => {
     });
 };
 
+const getAppointmentByUserId = (req, res) => {
+  const user_id=req.params.id
+
+  Appointments
+    .findOne({user:user_id})
+    .populate('user','email-_id')
+    .then((result) => {
+      console.log(result);
+      res.status(200).json({
+        result,
+        message: `Appointment found`,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+
+      res.send(err);
+    });
+};
+
 module.exports = {
   createNewAppointment,
   getAllAppointments,
   deleteAppointmentById,
   updateAppointmentById,
+  getAppointmentByUserId
 };
