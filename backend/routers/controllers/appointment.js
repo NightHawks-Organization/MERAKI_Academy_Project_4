@@ -2,19 +2,22 @@ const { Appointments } = require("../../db/models/Appointment");
 const appointmentsRouter = require("../routes/appointment");
 
 const createNewAppointment = (req, res) => {
-  const { date, doctor, email, specialty } = req.body;
-
+  const { date, doctor, user, specialty } = req.body;
+  // const email = req.token
+  // console.log(req.token)
   const appointment = new Appointments({
     date,
     doctor,
-    email,
+    user,
     specialty,
   });
 
   appointment
     .save()
     .then((result) => {
-      res.status(201).json(result);
+      res
+        .status(201)
+        .json({ result, message: "appointment scheduled successfully" });
     })
     .catch((err) => {
       res.send(err);
@@ -22,7 +25,9 @@ const createNewAppointment = (req, res) => {
 };
 
 const getAllAppointments = (req, res) => {
-  Appointments.find({})
+  Appointments
+  .find({})
+  .populate('user','email-_id')
     .then((result) => {
       res.status(200).json(result);
     })
@@ -35,8 +40,22 @@ const deleteAppointmentById = (req, res) => {
   Appointments.findByIdAndDelete(req.params.id)
     .then((result) => {
       res.status(200).json({
-        success: true,
-        message: `Success Delete Appointment with id => ${req.params.id}`,
+        result,
+        message: `Appointment deleted successfully`,
+      });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+const updateAppointmentById = (req, res) => {
+  Appointments
+    .findByIdAndUpdate(req.params.id, req.body, { new: true })
+    .then((result) => {
+      res.status(200).json({
+        result,
+        message: `Appointment updated successfully`,
       });
     })
     .catch((err) => {
@@ -48,4 +67,5 @@ module.exports = {
   createNewAppointment,
   getAllAppointments,
   deleteAppointmentById,
+  updateAppointmentById,
 };
