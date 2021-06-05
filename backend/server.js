@@ -11,14 +11,17 @@ app.use(express.json());
 const usersRouter = require("./routers/routes/auth/signUp");
 const loginRouter = require('./routers/routes/auth/login')
 const doctorRouter = require('./routers/routes/doctor')
+const appointmentsRouter = require("./routers/routes/appointment");
+
 
 //third-party middleware
 app.use(cors());
 
 //app routers
-app.use("/register", usersRouter);
+app.use(usersRouter);
 app.use(loginRouter)
 app.use("/doctor", doctorRouter);
+app.use("/appointment", appointmentsRouter);
 
 
 const PORT = process.env.PORT || 5000;
