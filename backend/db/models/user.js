@@ -11,6 +11,7 @@ const users = new mongoose.Schema({
     password: { type: String, required: true },
     gender: { type: String},
     role: { type: mongoose.Schema.ObjectId, ref: "Role" }
+    // ,default: '60bbe9fcc56765527849a976' user role _id
 });
 
 // Hashing password and lowering case of email
