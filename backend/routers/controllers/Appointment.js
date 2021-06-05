@@ -7,7 +7,7 @@ const deleteAppointments = (req, res) => {
 		.then((result) => {
 			res.status(200).json({
 				success: true,
-				message: `Success Delete atricle with id => ${id}`,
+				message: `Success Delete appointment with id => ${id}`,
 			});
 		})
 		.catch((err) => {

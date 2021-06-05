@@ -9,7 +9,11 @@ const addDoctor = (req, res) => {
   });
   Doctor_1.save()
     .then((result) => {
-      res.status(201).json(result);
+      res.status(201).json ({
+        result,
+        success: true,
+        message: 'doctor created successfully'})
+
     })
     .catch((err) => {
       res.send(err);
