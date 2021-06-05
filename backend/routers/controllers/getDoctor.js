@@ -1,7 +1,7 @@
-const {Doctor}=require('../../db/models/doctor')
-const {User}=require('../../db/models/user')
+const {Doctor}=require('../../db/models/doctor');
+// const {User}=require('../../db/models/user')
 
-const getAllDoctors = (req, res) => {
+const getDoctors = (req, res) => {
 	Doctor
 		.find({})
 		.then((result) => {
@@ -14,4 +14,4 @@ const getAllDoctors = (req, res) => {
 };
 
 
-module.exports={getAllDoctors}
+module.exports={getDoctors}
