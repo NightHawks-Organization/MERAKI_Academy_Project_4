@@ -10,6 +10,7 @@ app.use(express.json());
 //routers
 const usersRouter = require("./routers/routes/auth/signUp");
 const loginRouter = require('./routers/routes/auth/login')
+const roleRouter = require("./routers/routes/role");
 const doctorRouter = require('./routers/routes/doctor')
 const appointmentsRouter = require("./routers/routes/appointment");
 
@@ -20,6 +21,7 @@ app.use(cors());
 //app routers
 app.use(usersRouter);
 app.use(loginRouter)
+app.use(roleRouter)
 app.use("/doctor", doctorRouter);
 app.use("/appointment", appointmentsRouter);
 
