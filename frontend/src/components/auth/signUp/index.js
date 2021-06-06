@@ -1,5 +1,7 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import signUp from './signUp.css';
+
 
 export default function Register() {
   const [message, setMessage] = useState("");
@@ -32,14 +34,17 @@ export default function Register() {
       })
       .catch((error) => {});
   };
-  return <form className='register'>
-<input
+  return (
+    <form className="register">
+      <label>First Name</label>
+      <input
         type="text"
         placeholder="Enter First Name  "
         onChange={(e) => {
           setFirstName(e.target.value);
         }}
       />
+      <label>Last Name</label>
       <input
         type="text"
         placeholder="Enter Last Name "
@@ -47,6 +52,7 @@ export default function Register() {
           setLastName(e.target.value);
         }}
       />
+      <label>Age</label>
       <input
         type="number"
         placeholder="Enter Age "
@@ -54,20 +60,22 @@ export default function Register() {
           setAge(e.target.value);
         }}
       />
+      <label>Last Name</label>
       <input
         type="text"
         placeholder=" Enter phone Number "
         onChange={(e) => {
-            setPhonNumber(e.target.value);
+          setPhonNumber(e.target.value);
         }}
       />
-       <input
-        type="text"
-        placeholder="Enter Gender "
-        onChange={(e) => {
-            setGender(e.target.value);
-        }}
-      />
+
+<label>Gender</label>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label>
+
+      <label>Email</label>
       <input
         type="text"
         placeholder="Enter Email "
@@ -75,6 +83,7 @@ export default function Register() {
           setEmail(e.target.value);
         }}
       />
+<label>password</label>
       <input
         type="password"
         placeholder="Enter password  "
@@ -82,7 +91,8 @@ export default function Register() {
           setPassword(e.target.value);
         }}
       />
-    <button onClick={postUser}>Register </button>
-
-  </form>;
+      <button onClick={postUser}>Register </button>
+      <div className="message">{message}</div>
+    </form>
+  );
 }

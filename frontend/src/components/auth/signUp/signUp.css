@@ -1,0 +1,17 @@
+ #register{
+  margin: 8px;
+  border: 3px solid rgb(54, 23, 194);
+}
+
+button {
+  background-color: royalblue;
+  color: whitesmoke;
+  height: 30px;
+  margin: 5px;
+}
+
+input {
+  display: flex;
+  padding: 4px;
+  margin: 6px;
+}
