@@ -37,8 +37,7 @@ const deleteDoctorById = (req, res) => {
   Doctor.findByIdAndDelete(id)
     .then((result) => {
       res.status(200).json({
-        success: true,
-        message: `Success Delete doctor with id => ${id}`,
+        message: `Success Delete doctor`,
       });
     })
     .catch((err) => {

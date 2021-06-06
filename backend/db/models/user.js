@@ -11,7 +11,7 @@ const users = new mongoose.Schema({
     password: { type: String, required: true },
     gender: { type: String},
     role: { type: mongoose.Schema.ObjectId, ref: "Role" }
-    // ,default: '60bbe9fcc56765527849a976' user role _id
+    // user role _id==,default: '60bbe9fcc56765527849a976'
 });
 
 // Hashing password and lowering case of email
@@ -30,7 +30,7 @@ users.statics.authenticateBasic = async function (email, password) {
         const payload = {
           userId: user._id,
           email: user.email,
-          Role: user.role,
+          role: user.role,
         };
 
         const options = {

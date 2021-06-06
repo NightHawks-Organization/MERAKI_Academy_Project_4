@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const {Role} = require('./../../db/models/role');
+const {Role} = require('./../../db/models/Role');
 
 const authorization = (string) => {
 	return (req, res, next) => {
