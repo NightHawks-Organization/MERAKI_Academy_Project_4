@@ -5,15 +5,16 @@ const {
     getAllAppointments , 
     deleteAppointmentById , 
     updateAppointmentById ,
-    getAppointmentByUserId
+    getAppointmentByUserId,
 } = require("../controllers/appointment");
 
-
+const authentication = require("../middlewares/authentication");
+const authorization = require("../middlewares/authorization");
 
 appointmentsRouter.post("/", createNewAppointment);
 appointmentsRouter.get("/", getAllAppointments);
 appointmentsRouter.delete("/:id", deleteAppointmentById);
-appointmentsRouter.put("/:id", updateAppointmentById);
+appointmentsRouter.put("/:id",updateAppointmentById);
 appointmentsRouter.get("/:id", getAppointmentByUserId);
 
 module.exports = appointmentsRouter;
