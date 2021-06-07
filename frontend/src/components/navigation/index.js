@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <div>
-      Register
+      <Link to="/register">Register</Link>
       </div>
       <div>
       Login
