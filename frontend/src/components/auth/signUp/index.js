@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import signUp from "./signUp.css";
-import image from "./successfully.png";
-import imag from "./failed.png";
+
+// import imag from "./failed.png";
 
 export default function Register() {
   const [message, setMessage] = useState("");
@@ -33,11 +33,10 @@ export default function Register() {
       .then((res) => {
         console.log(res);
         if (res.status === 201) {
-          <image scr={image} alt=" " />;
-          // setMessage("The user has been created successfully");
+          setMessage("The user has been created successfully");
         } else {
-          <image scr={imag} alt=" " />;
-          // setMessage("Error happened while register, please try again");
+          // <img scr={imag} alt=" " />;
+          setMessage("Error happened while register, please try again");
         }
       })
       .catch((error) => {});
