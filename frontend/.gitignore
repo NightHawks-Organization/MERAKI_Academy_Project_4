@@ -4,6 +4,7 @@
 /node_modules
 /node_modules/axios
 /node_modules/follow-redirects
+.env
 
 
 /.pnp
