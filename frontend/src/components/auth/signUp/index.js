@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import signUp from "./signUp.css";
 
-// import imag from "./failed.png";
+
 
 export default function Register() {
   const [message, setMessage] = useState("");
@@ -35,7 +35,7 @@ export default function Register() {
         if (res.status === 201) {
           setMessage("The user has been created successfully");
         } else {
-          // <img scr={imag} alt=" " />;
+
           setMessage("Error happened while register, please try again");
         }
       })
@@ -111,7 +111,7 @@ export default function Register() {
         }}
       /></div>
       <button onClick={postUser}>Register </button>
-      {/* <div className="message">{message}</div> */}
+      <div className="message">{message}</div>
     </form>
   );
 }
