@@ -1,11 +1,15 @@
-.navigation{
-    border: yellow solid 4px;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.navigation {
+  border: yellow solid 4px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.navigation>div{
-    border: black solid 2px;
+.link {
+  text-decoration: solid;
+  border: black solid 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
 }

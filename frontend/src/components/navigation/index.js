@@ -6,24 +6,12 @@ import './navigation.css'
 const Navigation = () => {
   return (
     <div className="navigation">
-      <div>
-      <Link to="/register">Register</Link>
-      </div>
-      <div>
-      Login
-      </div>
-      <div>
-      Clinics
-      </div>
-      <div>
-      Doctors
-      </div>
-      <div>
-      Appointments
-      </div>
-      <div>
-      Schedule
-      </div>
+      <Link to="/register" ><div className="link">Register</div></Link>
+      <Link to="/login" ><div className="link">Login</div></Link>
+      <Link to="/clinics" ><div className="link">Clinics</div></Link>
+      <Link to="/doctors" ><div className="link">Doctors</div></Link>
+      <Link to="/appointments" ><div className="link">Appointments</div></Link>
+      <Link to="/schedule" ><div className="link">Schedule</div></Link>
     </div>
   );
 };
