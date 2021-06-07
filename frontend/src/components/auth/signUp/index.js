@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import signUp from './signUp.css';
-
+import signUp from "./signUp.css";
 
 export default function Register() {
   const [message, setMessage] = useState("");
@@ -60,7 +59,7 @@ export default function Register() {
           setAge(e.target.value);
         }}
       />
-      <label>Last Name</label>
+      <label>phon Number</label>
       <input
         type="text"
         placeholder=" Enter phone Number "
@@ -69,12 +68,16 @@ export default function Register() {
         }}
       />
 
-<label>Gender</label>
-      <input type="radio" id="male" name="gender" value="male" />
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="female" />
-      <label for="female">Female</label>
+      <form className='radio'>
+      <h5>Gender</h5>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <br />
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+      </form>
 
+      <pr />
       <label>Email</label>
       <input
         type="text"
@@ -83,7 +86,7 @@ export default function Register() {
           setEmail(e.target.value);
         }}
       />
-<label>password</label>
+      <label>password</label>
       <input
         type="password"
         placeholder="Enter password  "
