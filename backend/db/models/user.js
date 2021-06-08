@@ -22,9 +22,9 @@ users.pre('save', async function () {
 
 users.statics.authenticateBasic = async function (email, password) {
     try {
-      const user = await this.findOne({ email });
+      const user = await this.findOne({ email }).populate('role','role')
       if (!user) return ["The email does not exist", 404];
-  
+  console.log(user);
       const valid = await bcrypt.compare(password, user.password);
       if (valid) {
         const payload = {
@@ -37,7 +37,7 @@ users.statics.authenticateBasic = async function (email, password) {
             expiresIn: '60m',
         };
   
-        return [jwt.decode(jwt.sign(payload, process.env.SECRET, options)), 200,user._id];
+        return [jwt.sign(payload, process.env.SECRET, options), 200,user._id,user.role.role];
       }
       return ["The password you have entered is not correct", 403];
     } catch (error) {

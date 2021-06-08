@@ -6,7 +6,7 @@ import "./login.css";
 const axios = require('axios').default;
 
 
-const Login = ({token,setToken}) => {
+const Login = ({token,setToken,role,setRole}) => {
     const [email,setEmail]=useState()
     const [password,setPassword]=useState()
 
@@ -23,6 +23,7 @@ const Login = ({token,setToken}) => {
             console.log(response);
             console.log(`response.data.Token`, response.data.Token)
             setToken(response.data.Token)
+            setRole(response.data.role)
             //token connected to navigation options and redirect condition in app.js
            })
         .catch((err) => {
