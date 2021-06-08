@@ -1,0 +1,15 @@
+.login {
+    text-align: center;
+    margin: 7px;
+    padding: 100px;
+    border: purple solid 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+
+.loginButton{
+    text-align: center;
+  }
+
