@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Messages from '../Messages';
+import {Redirect} from 'react-router-dom';
 
 import "./login.css";
 const axios = require('axios').default;
@@ -25,15 +26,16 @@ const Login = ({token,setToken}) => {
             //token connected to navigation options and redirect condition in app.js
            })
         .catch((err) => {
-            // console.log('err.response: ', err.response)
+            console.log('err: ', err)
             // console.log('err.response.status: ', err.response.status)
+
             if(err.response.status===404){setLoginResult(404)}
             if(err.response.status===403){setLoginResult(403)}
             });
     }
     
-    return (
-        <form className="login">
+    return (<>
+        <form id="login">
       <div>
       <label>Email:</label>
       <input type="text" placeholder="Enter your Email here" onChange={(e) => {setEmail(e.target.value);}}/>
@@ -49,6 +51,8 @@ const Login = ({token,setToken}) => {
      :loginResult===403?<Messages className='failMessage' text="The password you've entered is incorrect "/>
      :null}
       </form>
+  {token?<Redirect to="/clinics" />:null}
+</>
    )
 }
 

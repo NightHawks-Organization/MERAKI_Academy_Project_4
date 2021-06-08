@@ -1,12 +1,15 @@
-.login {
-    text-align: center;
-    margin: 7px;
-    padding: 100px;
+#login {
     border: purple solid 4px;
     display: flex;
     flex-direction: column;
+    align-content: center !important;
+    justify-content: center;
     gap: 30px;
+    width: 80%;
   }
+input{
+   margin: auto;
+ }
 
 
 .loginButton{
