@@ -11,11 +11,12 @@ import Clinics from "../clinics/index";
 
 const Main = () => {
     const [token,setToken]=useState()
+    const [role,setRole]=useState()
 
 	return <div className="main">
 		<Navigation/>
 		<Route path="/Register" render={()=><SignUp/>} />
-		<Route path="/login" render={()=><LogIn token={token} setToken={setToken}/>} />
+		<Route path="/login" render={()=><LogIn token={token} setToken={setToken} role={role} setRole={setRole}/>} />
 		<Route path="/clinics" render={()=><Clinics/>} />
 		{/* className="login" token={token} setToken={setToken} */}
 		{/* <Dashboard/> */}
