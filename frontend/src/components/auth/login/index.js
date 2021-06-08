@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Messages from '../Messages';
-// import SuccessReg from "./SuccessReg";
+
 import "./login.css";
 const axios = require('axios').default;
 
@@ -20,14 +20,16 @@ const Login = ({token,setToken}) => {
         })
         .then((response) => {  
             console.log(response);
-            setToken(response.data.token)
+            console.log(`response.data.Token`, response.data.Token)
+            setToken(response.data.Token)
             //token connected to navigation options and redirect condition in app.js
-        })
+           })
         .catch((err) => {
-            // console.log('ERR: ', err.response);
+            // console.log('err.response: ', err.response)
+            // console.log('err.response.status: ', err.response.status)
             if(err.response.status===404){setLoginResult(404)}
             if(err.response.status===403){setLoginResult(403)}
-        });
+            });
     }
     
     return (
@@ -53,9 +55,18 @@ const Login = ({token,setToken}) => {
 export default Login
 
 
-// Inside App return
-    // <>
-	// <div className="App">App component</div> 
-	// <br /> <br />
-	// <Login />
-	// </> 
+// for me to show login div in App
+  
+{/*
+import Login from './components/auth/login';
+
+const App = () => {
+	return (<>
+	<div className="App">App component</div> 
+    <br /> <br />
+    <Login />
+    </> 
+	)};
+
+export default App;
+*/}
