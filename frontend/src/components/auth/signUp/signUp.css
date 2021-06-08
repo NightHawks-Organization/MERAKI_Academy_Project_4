@@ -15,12 +15,6 @@
   flex-wrap: wrap;
 
 }
-/* button {
-  background-color: royalblue;
-  color: whitesmoke;
-  height: 30px;
-  margin: 5px;
-} */
 
 input {
   display: flex;
@@ -37,4 +31,29 @@ label{
 #radio{
   border: 3px solid rgb(54, 23, 194);
 
+}
+
+.success {
+  height: 60px;
+  width: 300px;
+  background-color: rgba(163, 207, 163, 0.692);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.fail {
+  height: 60px;
+  width: 300px;
+  background-color: rgb(252, 165, 165);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(136, 63, 63);
+  font-size: 18px;
+  margin-bottom: 10px;
 }

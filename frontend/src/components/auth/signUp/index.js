@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import signUp from "./signUp.css";
 
-
+const SuccessReg = (props) => {
+  return (
+      <div className={props.className}>
+          {props.text}
+      </div>
+  )
+}
 
 export default function Register() {
-  const [message, setMessage] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(0);
@@ -13,6 +18,8 @@ export default function Register() {
   const [age, setAge] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [success,setSuccess]=useState(false);
+
 
  const  changeValue =(e)=>{
    setGender(e.target.value);
@@ -33,10 +40,10 @@ export default function Register() {
       .then((res) => {
         console.log(res);
         if (res.status === 201) {
-          setMessage("The user has been created successfully");
+          setSuccess(false);
         } else {
 
-          setMessage("Error happened while register, please try again");
+          setSuccess(true);
         }
       })
       .catch((error) => {});
@@ -111,7 +118,12 @@ export default function Register() {
         }}
       /></div>
       <button onClick={postUser}>Register </button>
-      <div className="message">{message}</div>
+      {success === true ? <SuccessReg className ='success' text ='created successfully'/>
+      :success === false ? <SuccessReg  text={success}/>
+      :null}
+  
     </form>
   );
 }
+
+
