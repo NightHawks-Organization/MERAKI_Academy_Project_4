@@ -16,7 +16,7 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .clinicName{
     position: relative;
-    top: 25px;
+    top: 20px;
     font-size: 30px;
     font-weight: bold;
 }
