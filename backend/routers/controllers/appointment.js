@@ -74,12 +74,12 @@ const getAppointmentByUserId = (req, res) => {
   const user_id=req.params.id
 
   Appointments
-    .findOne({user:user_id})
+    .find({user:user_id})
     .populate('user','email-_id').populate('doctor','-_id')
     .then((result) => {
       console.log(result);
       res.status(200).json({
-        result:[result],
+        result,
         //[result] is to get rendered with map function at appointments component js file
         message: `Appointment found`,
       });
