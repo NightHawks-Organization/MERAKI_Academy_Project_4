@@ -10,8 +10,7 @@ import LogIn from "../auth/login";
 import Clinics from "../clinics/index";
 import Appointments from "../appointments/index";
 
-const Main = ({token,setToken}) => {
-    const [role,setRole]=useState()
+const Main = ({token,setToken,role,setRole}) => {
     const [userId,setUserId]=useState()
 
 	return <div className="main">

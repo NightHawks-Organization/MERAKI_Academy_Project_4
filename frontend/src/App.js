@@ -11,11 +11,13 @@ import './App.css'
 
 const App = () => {
   const [token,setToken]=useState()
+  const [role,setRole]=useState()
+
 
   return (
     <div className="App">
-      <Header token={token}setToken={setToken}/>
-      <Main token={token}setToken={setToken}/>
+      <Header style={{marginTop:'20px'}} token={token}setToken={setToken} setRole={setRole}/>
+      <Main token={token}setToken={setToken} role={role} setRole={setRole}/>
       <PreFooter/>
       <Footer/>
     </div>
