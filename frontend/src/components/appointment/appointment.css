@@ -1,0 +1,10 @@
+
+.delete:hover{
+    transition: 0.25s ease transform;
+    transform: scale(1.2);
+    cursor: pointer;
+    background-color: rgb(197, 0, 0);
+    color: white;
+}
+
+

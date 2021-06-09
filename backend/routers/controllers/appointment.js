@@ -26,7 +26,7 @@ const createNewAppointment = (req, res) => {
 const getAllAppointments = (req, res) => {
   Appointments
   .find({})
-  .populate('user','email-_id')
+  .populate('user','email-_id').populate('doctor','-_id')
     .then((result) => {
       res.status(200).json(result);
     })
@@ -38,10 +38,18 @@ const getAllAppointments = (req, res) => {
 const deleteAppointmentById = (req, res) => {
   Appointments.findByIdAndDelete(req.params.id)
     .then((result) => {
-      res.status(200).json({
-        result,
-        message: `Appointment deleted successfully`,
-      });
+
+      Appointments
+      .find({})
+      .populate('user','email-_id').populate('doctor','-_id')
+        .then(async(result1) => {
+          const x=await result1;
+          // console.log(x);
+          res.json(x);
+        })
+        .catch((err) => {
+          res.send(err);
+        });
     })
     .catch((err) => {
       res.send(err);
@@ -67,11 +75,12 @@ const getAppointmentByUserId = (req, res) => {
 
   Appointments
     .findOne({user:user_id})
-    .populate('user','email-_id')
+    .populate('user','email-_id').populate('doctor','-_id')
     .then((result) => {
       console.log(result);
       res.status(200).json({
-        result,
+        result:[result],
+        //[result] is to get rendered with map function at appointments component js file
         message: `Appointment found`,
       });
     })

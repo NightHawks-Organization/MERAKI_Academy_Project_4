@@ -24,3 +24,7 @@
     transition: ease 0.25s transform;
     transform: translateX(7px);
 }
+.link:active {
+  transition: ease 0.1s transform;
+  transform: translateY(1.5px);
+}
