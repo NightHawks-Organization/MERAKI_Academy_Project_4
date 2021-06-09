@@ -3,12 +3,18 @@ import { Link,Route } from "react-router-dom";
 import "./footer.css";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
-import SocialMedia from "./SocialMedia";
-
+import {
+	FaFacebookSquare,
+	FaYoutube,
+	FaInstagramSquare,
+	FaLinkedin,
+  } from "react-icons/fa";
 
 
 
 const Footer = () => {
+	let iconStyles = { color: "black", fontSize: "2.5em" , };
+
   return (
     <div id="footer">
       <Link to="/AboutUs" style={{ textDecoration: "none" }}><Route path="/AboutUs" render={() => <AboutUs />} />
@@ -17,9 +23,12 @@ const Footer = () => {
       <Link to="/ContactUs" style={{ textDecoration: "none" }}><Route path="/ContactUs" render={() => <ContactUs />} />
         <div className="link">Contact Us</div>
       </Link>
-      <Link to="/SocialMedia" style={{ textDecoration: "none" }}><Route path="/SocialMedia" render={() => <SocialMedia />} />
-        <div className="link">Social Media</div>
-      </Link>
+      <div id ="social">
+      <FaFacebookSquare style={iconStyles} />
+      <FaInstagramSquare style={iconStyles} />
+      <FaYoutube  style={iconStyles}/>
+      <FaLinkedin style={iconStyles}/>
+    </div>
       
     </div>
   );
