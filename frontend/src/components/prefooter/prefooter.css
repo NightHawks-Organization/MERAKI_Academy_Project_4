@@ -1,4 +1,6 @@
 .prefooter{
     border: skyblue solid 4px;
     height: 300px;
+    overflow: scroll;
 }
+
