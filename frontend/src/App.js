@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header style={{marginTop:'20px'}} token={token}setToken={setToken} setRole={setRole}/>
+      <Header token={token}setToken={setToken} setRole={setRole}/>
       <Main token={token}setToken={setToken} role={role} setRole={setRole}/>
       <PreFooter/>
       <Footer/>

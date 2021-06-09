@@ -11,9 +11,9 @@ const logout=()=>{
 }
 
 	return <div className="header">
-		Header component 
+		<span className='clinicName'>Clinic Name </span>
 		{token
-		?<span onClick={logout}>logout</span>
+		?<span className='logout' onClick={logout}>logout</span>
 		:<Redirect to='/login'/>}
 		
 		</div>;

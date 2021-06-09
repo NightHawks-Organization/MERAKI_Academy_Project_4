@@ -1,5 +1,22 @@
 .header{
-    border: red solid 4px;
+    position: relative;
     height: 80px;
     margin-bottom: 20px;
+  background-color: #d7d9d6;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+.logout{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.clinicName{
+    position: relative;
+    top: 25px;
+    font-size: 30px;
+    font-weight: bold;
 }
