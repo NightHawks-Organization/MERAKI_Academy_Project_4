@@ -1,4 +1,44 @@
-.footer{
+#footer{
     border: red solid 4px;
     height: 80px;
+    display: flex;
+    justify-content: space-around;
+    color: #000;
 }
+.link {
+    text-decoration: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    /* background-color: #d7d9d6; */
+    
+  }
+  .link:hover {
+      /* background-color: #d7d9d6;
+      background-color: #bfc7d9; */
+      /* cursor: pointer; */
+      /* border: outset 0.5px; */
+      /* transition: ease 0.25s transform; */
+      /* transform: translateX(7px); */
+  }
+
+  .About{
+      font-size: large;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-display: 2px;
+      color: #000;
+      justify-items: center;
+      border:black solid 3px;
+  }
+
+  p{
+      align-items: center;
+  }
+
+  .Contact{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-display: 2px;
+    color: #000;
+    justify-items: center;
+    border:black solid 3px;
+  }

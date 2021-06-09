@@ -66,6 +66,7 @@ export default function Register() {
   return (
     <>
       <form className="register">
+     
         <div>
           <label>First Name</label>
           <input
@@ -87,16 +88,6 @@ export default function Register() {
           />
         </div>
         <div>
-          <label>Age</label>
-          <input
-            type="number"
-            placeholder="Enter Age "
-            onChange={(e) => {
-              setAge(e.target.value);
-            }}
-          />
-        </div>
-        <div>
           <label>phon Number</label>
           <input
             type="text"
@@ -107,15 +98,15 @@ export default function Register() {
           />
         </div>
         <div>
-          <h5>Gender</h5>
-          <div id="radio" onChange={changeValue}>
-            <label>Male</label>
-            <input type="radio" id="male" name="gender" value="male" />
-            <label>Female</label>
-            <input type="radio" id="female" name="gender" value="female" />
-          </div>
+          <label>Age</label>
+          <input
+            type="number"
+            placeholder="Enter Age "
+            onChange={(e) => {
+              setAge(e.target.value);
+            }}
+          />
         </div>
-        <br />
         <div>
           <label>Email</label>
           <input
@@ -136,6 +127,17 @@ export default function Register() {
             }}
           />
         </div>
+        <div>
+          <h5>Gender</h5>
+          <div id="radio" onChange={changeValue}>
+            <label>Male</label>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label>Female</label>
+            <input type="radio" id="female" name="gender" value="female" />
+          </div>
+        </div>
+        <br />
+
         <button id="button" onClick={postUser}>
           Register{" "}
         </button>
