@@ -1,6 +1,7 @@
 .main{
     display: flex;
     width: 100%;
-    border: greenyellow solid 4px;
     height: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

@@ -8,16 +8,17 @@ import Dashboard from "../dashboard/index";
 import SignUp from "../auth/signUp";
 import LogIn from "../auth/login";
 import Clinics from "../clinics/index";
+import Appointments from "../appointments/index";
 
-const Main = () => {
-    const [token,setToken]=useState()
-    const [role,setRole]=useState()
+const Main = ({token,setToken,role,setRole}) => {
+    const [userId,setUserId]=useState()
 
 	return <div className="main">
-		<Navigation/>
+		<Navigation role={role} token={token}/>
 		<Route path="/Register" render={()=><SignUp/>} />
-		<Route path="/login" render={()=><LogIn token={token} setToken={setToken} role={role} setRole={setRole}/>} />
+		<Route path="/login" render={()=><LogIn token={token} setToken={setToken} role={role} setRole={setRole} setUserId={setUserId}/>} />
 		<Route path="/clinics" render={()=><Clinics/>} />
+		<Route path="/appointments" render={()=><Appointments userId={userId} role={role}/>} />
 		{/* className="login" token={token} setToken={setToken} */}
 		{/* <Dashboard/> */}
 	</div>;
