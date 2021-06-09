@@ -46,8 +46,8 @@ const axios = require('axios').default;
   }else{setNotLogged(true)}
 }
     return (
-    	<div>
-        Appointments
+    	<div className='appointments'>
+        <span className='apps'>Appointments</span>
     {appointments.map((elem,i)=>(<Appointment key={i} date={elem.date} doctor={elem.doctor.name} id={elem._id} setAppointments={setAppointments}/>))}
     {notLogged?<p>please log in first</p>:null}
       	{/* <button type='button' onClick={getAppointments}>get my appointments</button> */}

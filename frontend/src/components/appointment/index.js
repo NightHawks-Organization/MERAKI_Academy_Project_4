@@ -24,7 +24,7 @@ const deleteAppointmentById=(appId)=>{
 
 }
 
-	return <div className="appointment">{doctor} {date} <button className='delete' onClick={()=>deleteAppointmentById(id)}>X</button></div>;
+	return <div className="appointment"><span>{doctor}</span> <span>{date}</span> <button className='delete' onClick={()=>deleteAppointmentById(id)}>X</button></div>;
 };
 
 export default Appointment;
