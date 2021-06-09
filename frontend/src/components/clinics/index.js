@@ -1,11 +1,15 @@
-import React from "react";
-
+import React,{useEffect} from "react";
+import './clinics.css';
 
 
  export default function Clinics() {
-	const listClinics = ['Emergency Medicine','Family Medicine','Acupuncture', 'Cardiology', 'Dermatology']
+
+  useEffect(()=>{
+    
+  })
+	const listClinics = ['neurology','phsycology','gastrology', 'Cardiology', 'Dermatology']
     return (
-    	<div>
+    	<div className ='Clinics'>
       {listClinics.map(Clinic => <h2 key={Clinic}>{Clinic}</h2>)}
       	</div>
     )
