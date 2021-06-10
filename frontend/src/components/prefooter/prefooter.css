@@ -1,9 +1,47 @@
-.prefooter{
-    border: skyblue solid 4px;
-    height: 300px;
-    overflow: scroll;
+.prefooter {
+  border: skyblue solid 4px;
+  height: 350px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  margin: 5px;
 }
-img{
-    height: 100px;
-    width: 100px;
+.ticket {
+  width: 300px;
+  flex: 0 0 auto;
+  margin: 5px;
+
+}
+img {
+  height: 130px;
+  width: 130px;
+}
+.corona {
+  border: black solid 2px;
+  font-weight: 500;
+  /* width: 350px; */
+  overflow-y: scroll;
+}
+.diabetes {
+  border: black solid 2px;
+  /* width: 350px; */
+  overflow-y: scroll;
+}
+.Sport {
+  border: black solid 2px;
+  /* width: 350px; */
+  overflow-y: scroll;
+}
+.pressure {
+  border: black solid 2px;
+  /* width: 350px; */
+  overflow-y: scroll;
+}
+.vitamins {
+  border: black solid 2px;
+  /* width: 350px; */
+  overflow-y: scroll;
 }
