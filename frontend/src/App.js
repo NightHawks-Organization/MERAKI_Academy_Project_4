@@ -6,6 +6,7 @@ import Header from "./components/header/index";
 import Main from "./components/main/index";
 import PreFooter from "./components/prefooter/index";
 import Footer from "./components/footer/index";
+import Poster from "./components/poster/index";
 
 import './App.css'
 
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div className="App">
       <Header token={token}setToken={setToken} setRole={setRole}/>
+      <Poster/>
       <Main token={token}setToken={setToken} role={role} setRole={setRole}/>
       <PreFooter/>
       <Footer/>

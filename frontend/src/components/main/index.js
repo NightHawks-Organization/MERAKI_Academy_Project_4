@@ -9,6 +9,7 @@ import SignUp from "../auth/signUp";
 import LogIn from "../auth/login";
 import Clinics from "../clinics/index";
 import Appointments from "../appointments/index";
+import Schedule from "./schedule";
 
 const Main = ({token,setToken,role,setRole}) => {
     const [userId,setUserId]=useState()
@@ -19,6 +20,7 @@ const Main = ({token,setToken,role,setRole}) => {
 		<Route path="/login" render={()=><LogIn token={token} setToken={setToken} role={role} setRole={setRole} setUserId={setUserId}/>} />
 		<Route path="/clinics" render={()=><Clinics/>} />
 		<Route path="/appointments" render={()=><Appointments userId={userId} role={role}/>} />
+		<Route path="/schedule" render={()=><Schedule/>} />
 		{/* className="login" token={token} setToken={setToken} */}
 		{/* <Dashboard/> */}
 	</div>;
