@@ -3,4 +3,7 @@
     height: 300px;
     overflow: scroll;
 }
-
+img{
+    height: 100px;
+    width: 100px;
+}
