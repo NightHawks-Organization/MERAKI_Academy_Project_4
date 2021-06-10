@@ -51,7 +51,7 @@ const axios = require('axios').default;
     	<div className='appointments'>
         <span className='apps'>Appointments</span>
     {appointments.map((elem,i)=>(<Appointment key={i} email={elem.user.email} date={elem.date} doctor={elem.doctor.name} specialty={elem.doctor.specialty} id={elem._id} setAppointments={setAppointments}/>))}
-    {notLogged?<p>please log in first</p>:null}
+    {notLogged?<div className='appErr'>Please login first</div>:null}
       	{/* <button type='button' onClick={getAppointments}>get my appointments</button> */}
         </div>
     )
