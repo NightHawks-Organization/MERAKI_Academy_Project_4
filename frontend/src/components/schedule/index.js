@@ -22,10 +22,10 @@ const Schedule = ({userId}) => {
 	// }
 
 	const checkAvailability=()=>{
-		const doctor = '60bcfb42d0659b7944db9129'
+		
 		axios({
             method: 'get',
-            url: `http://localhost:5000/appointment/dr/${doctor}`,
+            url: `http://localhost:5000/appointment/dr/${doctorId}`,
         })
         .then((response) => {  
 // this is the response.data
@@ -51,7 +51,7 @@ const Schedule = ({userId}) => {
 		axios({
             method: 'post',
             url: 'http://localhost:5000/appointment',
-            data: {date:dateAndTime,user:userId,doctor:'60bcfb42d0659b7944db9129'}
+            data: {date:dateAndTime,user:userId,doctor:doctorId}
         })
         .then((response) => {  
             console.log(response);
