@@ -65,8 +65,8 @@ const Schedule = ({userId}) => {
 	<form>
 		<p>please enter your appointment date and time </p>
 		<p>work hours from 8:00 am to 3:00 pm</p>
-		<input style={{display:"inline"}} type='date'  min="2018-06-07" max="2018-06-14" required onChange={(e) => {setDate(e.target.value);}}/>
-		<input style={{display:"inline"}} type='time'  min="08:00" max="15:00" step="1800" required onChange={(e) => {setTime(e.target.value);}}/>
+		<input style={{display:"inline"}} type='date'  min="2021-06-10" required onChange={(e) => {setDate(e.target.value);}}/>
+		<input style={{display:"inline"}} type='time'  min="08:00" max="17:00" step="1800" required onChange={(e) => {setTime(e.target.value);}}/>
 		<input style={{display:"inline" , width:'120px'}} type="submit" value='check validity'/>
 		<input style={{display:"inline", width:'120px'}} type="button" onClick={checkAvailability} value='check availability'/>
 		{taken==='Appointment available'?<button type='button' style={{display:"block"}} onClick={addAppointment}>Schedule now</button>:null}
