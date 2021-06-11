@@ -1,13 +1,12 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
-const Doctor = ({title,Specialty,className}) => {
+const Doctor = ({name,specialty}) => {
     return (<>
-        <div className={className}>
-            <span style={{display:'inline'}}>{title}</span><span className="DoctorDetails" style={{fontSize:'16px'}}>Dr Details</span>
-            <p>{Specialty}</p>
+        <div className="doctor">
+            <span>{name}</span>
+            <span> - {specialty}</span>
         </div>
-        <br></br>
         </>
     )
 }
@@ -15,7 +14,7 @@ const Doctor = ({title,Specialty,className}) => {
 
 const axios = require('axios').default;
 
-const Dashboard = ({className}) => {
+const DoctorsList = ({token}) => {
 const [doctors,setDoctors]=useState([])
 
 useEffect(() => {
@@ -23,29 +22,26 @@ useEffect(() => {
   }, []);
 
 const getAllDoctors=()=>{
-
+    
     axios({
         method: 'get',
         url: 'http://localhost:5000/doctor' 
     })
     .then((response) => {  
         console.log(response.data);
-        setDoctor(response.data);
+        setDoctors(response.data);
     })
     .catch((err) => {
         console.log('ERR: ', err.response);
     });
-
-}
-    return (
-        <div className={className}>
-      <p>Dashboard</p>
-      <button type='button' className='DoctorsListButton' onClick={getAllDoctors} style={{ width: '150px' }}>Our Doctors</button>
-      <div className='Doctors'>
-    {Doctors.map((elem,i)=>(<Doctor key={i} className="Doctor" name={elem.name} specialty={elem.specialty}/>))}
-    </div>
-    </div>
     
+}
+    return (<>
+        <div className="doctors">
+    {doctors.map((elem,i)=>(<Doctor key={i} name={elem.name} specialty={elem.specialty}/>))}
+    </div>
+    {token?<Link to='/addDoctor'>Add Doctor</Link>:null}
+    </>
     )
 }
 export default DoctorsList;
