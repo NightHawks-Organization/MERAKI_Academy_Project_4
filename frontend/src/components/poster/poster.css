@@ -1,4 +1,6 @@
 .poster{
     border: black solid 4px;
+    border-radius: 10px;
     height: 300px;
+    background-image:url('https://www.freepik.com/premium-photo/abstract-blur-beautiful-luxury-hospital-clinic-interior-background_8459886.htm') ;
 }
