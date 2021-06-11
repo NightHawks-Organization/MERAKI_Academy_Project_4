@@ -81,8 +81,8 @@ const PreFooter = () => {
           <ReadMoreReact
             text="  Vitamins are organic substances present in minute amounts in natural foodstuffs. 
             Having too little of any particular vitamin may increase the risk of developing certain health issues.
-     A vitamin is an organic compound, which means that it contains carbon.
-      It is also an essential nutrient that the body may need to get from food."
+             A vitamin is an organic compound, which means that it contains carbon.
+            It is also an essential nutrient that the body may need to get from food."
             min={60}
             ideal={100}
             max={200}

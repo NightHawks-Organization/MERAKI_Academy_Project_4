@@ -1,18 +1,22 @@
-.Clinics{
-   font-size: x-large;
-    font-family: 'Courier New', Courier, monospace;
+.Clinics {
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
 }
 
-h2{
-    display: table;
-
-    font-size: 1em;
-
-    box-sizing: border-box;
-    font-weight: bold;
-    border:black solid 2px;
-    width: 400px;
-    height: 20px;
-    padding: 11px;
-    margin-left: 255px;
+h2 {
+  display: table;
+  font-size: 1em;
+  box-sizing: border-box;
+  font-weight: bold;
+  border: black solid 2px;
+  width: 400px;
+  height: 20px;
+  padding: 11px;
+  margin-left: 255px;
+}
+@media screen and (max-width: 700px) {
+  h2 {
+    position: relative;
+    right: 30%;
+  }
 }
