@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { Route } from "react-router-dom";
 
 import './main.css'
@@ -11,10 +11,13 @@ import Clinics from "../clinics/index";
 import Appointments from "../appointments/index";
 import Doctors from "../DoctorsList/DoctorsList";
 import AddDoctor from "../addDoctor/addDoctor";
+import Schedule from "../schedule/index";
 
 
-const Main = ({token,setToken,role,setRole}) => {
-    const [userId,setUserId]=useState()
+const Main = ({token,setToken,role,setRole,userId,setUserId}) => {
+	useEffect(() => {
+		setUserId(localStorage.getItem('userId'));
+	  }, []);
 
 	return <div className="main">
 		<Navigation role={role} token={token}/>
@@ -24,6 +27,7 @@ const Main = ({token,setToken,role,setRole}) => {
 		<Route path="/appointments" render={()=><Appointments userId={userId} role={role}/>} />
 		<Route path='/doctors' render={()=><Doctors token={token}/>} />
 		<Route path='/addDoctor' render={()=><AddDoctor token={token} role={role}/>} />
+		<Route path='/schedule' render={()=><Schedule userId={userId}/>} />
 		{/* className="login" token={token} setToken={setToken} */}
 		{/* <Dashboard/> */}
 	</div>;

@@ -3,11 +3,13 @@ import { Link,Redirect } from "react-router-dom";
 
 import './header.css'
 
-const Header = ({token,setToken,setRole}) => {
+const Header = ({token,setToken,setRole,setUserId}) => {
 
 const logout=()=>{
 	setToken(undefined)
 	setRole(undefined)
+	setUserId(undefined)
+	localStorage.clear()
 }
 
 	return <div className="header">

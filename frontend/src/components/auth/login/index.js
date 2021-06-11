@@ -20,14 +20,17 @@ const Login = ({token,setToken,role,setRole,setUserId}) => {
             data: {email,password}
         })
         .then((response) => {  
-            console.log(response);
-            console.log(`response.data.Token`, response.data.Token)
+            // console.log(response);
+            // console.log(`response.data.Token`, response.data.Token)
+            localStorage.setItem('token', JSON.stringify(response.data.Token));
+            localStorage.setItem('role', JSON.stringify(response.data.role));
+            localStorage.setItem('userId', JSON.stringify(response.data.userId));
             setToken(response.data.Token)
             setRole(response.data.role)
             setUserId(response.data.userId)
-            console.log('response.data.Token===',response.data.Token);
-            console.log('response.data.role===',response.data.role);
-            console.log('response.data.userId===',response.data.userId);
+            // console.log('response.data.Token===',response.data.Token);
+            // console.log('response.data.role===',response.data.role);
+            // console.log('response.data.userId===',response.data.userId);
             //token connected to navigation options and redirect condition in app.js
            })
         .catch((err) => {
