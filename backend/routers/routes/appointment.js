@@ -6,6 +6,7 @@ const {
     deleteAppointmentById , 
     updateAppointmentById ,
     getAppointmentByUserId,
+    checkAvailabilityByDoctor
 } = require("../controllers/appointment");
 
 const authentication = require("../middlewares/authentication");
@@ -16,5 +17,6 @@ appointmentsRouter.get("/", getAllAppointments);
 appointmentsRouter.delete("/:id", deleteAppointmentById);
 appointmentsRouter.put("/:id",updateAppointmentById);
 appointmentsRouter.get("/:id", getAppointmentByUserId);
+appointmentsRouter.get("/dr/:id", checkAvailabilityByDoctor);
 
 module.exports = appointmentsRouter;

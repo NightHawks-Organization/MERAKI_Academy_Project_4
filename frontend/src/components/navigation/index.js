@@ -10,8 +10,8 @@ const Navigation = ({role,token}) => {
       <Link to="/login" style={{textDecoration:"none"}}><div className="link">Login</div></Link></>:null}
       <Link to="/clinics" style={{textDecoration:"none"}}><div className="link">Clinics</div></Link>
       <Link to="/doctors" style={{textDecoration:"none"}}><div className="link">Doctors</div></Link>
-      <Link to="/appointments" style={{textDecoration:"none"}}><div className="link">Appointments</div></Link>
-      <Link to="/schedule" style={{textDecoration:"none"}}><div className="link">Schedule</div></Link>
+      {token?<><Link to="/appointments" style={{textDecoration:"none"}}><div className="link">Appointments</div></Link>
+      <Link to="/schedule" style={{textDecoration:"none"}}><div className="link">Schedule</div></Link></>:null}
     </div>
   );
 };

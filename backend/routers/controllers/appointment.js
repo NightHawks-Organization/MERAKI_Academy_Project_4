@@ -91,10 +91,26 @@ const getAppointmentByUserId = (req, res) => {
     });
 };
 
+const checkAvailabilityByDoctor=(req, res)=>{
+  const doctor_id=req.params.id
+
+  Appointments
+  .find({doctor:doctor_id},'date')
+  .then((result)=>{
+    console.log(result);
+    res.json(result)
+  })
+  .catch((err)=>{
+    console.log(err);
+      res.send(err);
+  })
+}
+
 module.exports = {
   createNewAppointment,
   getAllAppointments,
   deleteAppointmentById,
   updateAppointmentById,
-  getAppointmentByUserId
+  getAppointmentByUserId,
+  checkAvailabilityByDoctor
 };
