@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
+import { Redirect } from "react-router-dom";
 
 import './schedule.css'
 
@@ -8,7 +9,9 @@ const axios = require('axios').default;
 const Schedule = ({userId}) => {
 	const [date,setDate]=useState()
 	const [time,setTime]=useState()
-	// const [doctor,setDoctor]=useState() //by doctor id
+	const [doctorId,setDoctorId]=useState()
+	const [doctorsDB,setDoctorsDB]=useState([]) //by doctor id
+	const [shceduled,setScheduled]=useState()
 
 	const [taken,setTaken]=useState('')
 
@@ -53,7 +56,7 @@ const Schedule = ({userId}) => {
         .then((response) => {  
             console.log(response);
             // if(response.data.errors){console.log('You are not admin')}
-            
+            setScheduled(true)
         })
         .catch((err) => {
             console.log('ERR: ', err.response);
@@ -61,12 +64,44 @@ const Schedule = ({userId}) => {
         });
 	}
 
+	const getAllDoctors=()=>{
+		axios({
+			method: "get",
+			url: "http://localhost:5000/doctor",
+		  })
+			.then((response) => {
+			//   getAllDoctorsLength = response.data.length;
+			  setDoctorsDB(response.data);
+			  console.log(response.data);
+			})
+			.catch((err) => {
+			  console.log("err: ", err.response);
+			  throw err;
+			});
+	}
+
+	useEffect(() => {
+		getAllDoctors();
+	  }, []);
+
 	return <div className="schedule"><h1>schedule component</h1>
 	<form>
 		<p>please enter your appointment date and time </p>
 		<p>work hours from 8:00 am to 3:00 pm</p>
 		<input style={{display:"inline"}} type='date'  min="2021-06-10" required onChange={(e) => {setDate(e.target.value);}}/>
 		<input style={{display:"inline"}} type='time'  min="08:00" max="17:00" step="1800" required onChange={(e) => {setTime(e.target.value);}}/>
+		
+		<select onChange={(e) => {setDoctorId(e.target.value);}}>
+        {doctorsDB.map((elem, i) => {
+          return (
+            <option key={i} value={`${elem._id}`} >
+              {" "}
+              {elem.name} - {elem.specialty}{" "}
+            </option>
+          );
+        })}
+      </select>
+
 		<input style={{display:"inline" , width:'120px'}} type="submit" value='check validity'/>
 		<input style={{display:"inline", width:'120px'}} type="button" onClick={checkAvailability} value='check availability'/>
 		{taken==='Appointment available'?<button type='button' style={{display:"block"}} onClick={addAppointment}>Schedule now</button>:null}
@@ -76,6 +111,7 @@ const Schedule = ({userId}) => {
 		:taken==='Appointment available'
 		?<Messages className='successMessage' text={taken}/>
 		:null}
+		{shceduled?<Redirect to="/appointments" />:null}
 	</div>;
 };
 
