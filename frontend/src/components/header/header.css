@@ -2,22 +2,31 @@
     position: relative;
     height: 80px;
     margin-bottom: 20px;
-  background-color: #F2F2F2;
-border-radius: 10px;
-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
+    text-align: left;
+    opacity: 0.6;
+    background-image: url(https://i.postimg.cc/sxCv0Zr8/logo.png);
+    background-size:5%;
+    background-repeat: no-repeat;
 }
 .logout{
     position: absolute;
     right: 20px;
-    bottom: 30px;
+    bottom: 10px;
     text-decoration: underline;
     cursor: pointer;
+    font-size: 20px;
 }
 .clinicName{
     position: relative;
     top: 20px;
-    font-size: 30px;
+    left:50px;
+    font-size: 50px;
     font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Rig Bold Face', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0;
+    color: 0D4373
+    ;
 }

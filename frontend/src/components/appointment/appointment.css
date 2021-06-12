@@ -6,6 +6,9 @@
     background-color: rgb(197, 0, 0);
     color: white;
 }
+.delete{
+    position: relative;
+}
 
 .appointment{
     border: black solid 1px;
@@ -16,7 +19,7 @@
    min-height: 15%;
     row-gap:50px;
     align-content: center;
-    background-color: #5195c070;
+    background-color: #0d43735d;
     border-radius: 5px;
 }
 .appointment>span{

@@ -13,7 +13,7 @@ const PreFooter = () => {
       <Splide
         options={{
           rewind: true,
-          width: 1500,
+          width: 1520,
           gap: "1rem",
           type: "loop",
         }}
@@ -134,22 +134,12 @@ const PreFooter = () => {
         </SplideSlide>
         <SplideSlide>
           <div className="pressure ticket">
-            <h3>Blood pressure</h3>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Heart_systole.svg/330px-Heart_systole.svg.png" />
+            <h3>Your IP Address</h3>
+            <a href="https://www.ip2location.com/free/widgets" target="_blank"><img src="https://tools.ip2location.com/200x200.png" border="0" width="200" height="200" /></a>
+
             <p>
               <ReadMoreReact
-                text=" Blood pressure (BP) is the pressure of circulating blood against the walls of blood vessels.
-             Most of this pressure results from the heart pumping blood through the circulatory system. When used 
-             without qualification, the term 'blood pressure' refers to the pressure in the large arteries. Blood 
-             pressure is usually expressed in terms of the systolic pressure (maximum pressure during one heartbeat) 
-             over diastolic pressure (minimum pressure between two heartbeats) in the cardiac cycle. It is measured in 
-             millimeters of mercury (mmHg) above the surrounding atmospheric pressure.
-             Traditionally, blood pressure was measured non-invasively using auscultation with either an aneroid gauge, 
-             or a mercury-tube sphygmomanometer. Auscultation is still generally considered to be the gold standard of
-              accuracy for non-invasive blood pressure readings in clinic. However, semi-automated methods have become common,
-            largely due to concerns about potential mercury toxicity, although cost, ease of use and applicability to ambulatory
-            blood pressure or home blood pressure measurements have also influenced this trend.
-            "
+                text="Find your location"
                 min={80}
                 ideal={100}
                 max={200}

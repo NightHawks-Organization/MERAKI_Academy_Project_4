@@ -3,7 +3,7 @@ import React from 'react';
 import './poster.css'
 
 const Poster = () => {
-	return <div className="poster">Poster component</div>;
+	return <div className="poster"></div>;
 };
 
 export default Poster;

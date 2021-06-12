@@ -43,6 +43,7 @@ const axios = require('axios').default;
       setAppointments(response.data);
   })
   .catch((err) => {
+      console.log(appointments);
       console.log('ERR: ', err.response);
   })
   }else{setNotLogged(true)}

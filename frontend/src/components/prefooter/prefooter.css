@@ -8,6 +8,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
+    
   }
   .ticket {
     flex: 0 0 auto;
@@ -16,7 +17,7 @@
     align-content: center;
     
    
-    background-color: #F2F2F2;
+    background-color: #bfc7d9;
   
   }
   img {
@@ -24,24 +25,24 @@
     width: 130px;
   }
   .corona {
-    border: black solid 2px;
+    font-size: 20px;
     font-weight: 500;
     overflow-y: hidden;
   }
   .diabetes {
-    border: black solid 2px;
+    font-size: 20px;
     overflow-y: hidden;
   }
   .Sport {
-    border: black solid 2px;
+    font-size: 20px;
     overflow-y: hidden;
   }
   .pressure {
-    border: black solid 2px;
+    font-size: 20px;
     overflow-y: hidden;
   }
   .vitamins {
-    border: black solid 2px;
+    font-size: 20px;
     overflow-y: hidden;
   }
   
