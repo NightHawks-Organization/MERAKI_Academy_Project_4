@@ -10,7 +10,7 @@ import './clinics.css';
 	const listClinics = ['neurology','phsycology','gastrology', 'Cardiology', 'Dermatology']
     return (
     	<div className ='Clinics'>
-      {listClinics.map(Clinic => <h2 key={Clinic}>{Clinic}</h2>)}
+      {listClinics.map(Clinic => <h2 className='clinic' key={Clinic}>{Clinic}</h2>)}
       	</div>
     )
 }

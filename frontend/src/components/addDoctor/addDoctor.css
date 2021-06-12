@@ -1,0 +1,30 @@
+.addDoctor {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+     /* display: flex;
+    flex-direction: column; */
+    /*flex-wrap: wrap;
+    align-content: center;
+    justify-content: center; */
+    padding-top: 9%;
+    width: 78%;
+    row-gap: 5px;
+    border-radius: 10px;
+    margin-left: 20px;
+    background-color: #F2F2F2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .addButton{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    width: 200px;
+  background-color: #5195c08f;
+  border-radius: 8px;
+  height: 35px;
+  position: relative;
+  top: 25px;
+}

@@ -1,18 +1,33 @@
-.Clinics{
-   font-size: x-large;
-    font-family: 'Courier New', Courier, monospace;
+.Clinics {
+  font-size: x-large;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 78%;
+  column-gap: 25px;
+  row-gap: 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: #F2F2F2;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-h2{
-    display: table;
+h2 {
+  display: table;
+  font-size: 1em;
+  box-sizing: border-box;
+  font-weight: bold;
+  border: black solid 2px;
+  width: 400px;
+  height: 20px;
+  padding: 11px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: #5195c070;
 
-    font-size: 1em;
-
-    box-sizing: border-box;
-    font-weight: bold;
-    border:black solid 2px;
-    width: 400px;
-    height: 20px;
-    padding: 11px;
-    margin-left: 255px;
 }

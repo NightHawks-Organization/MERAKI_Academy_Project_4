@@ -2,7 +2,7 @@
     position: relative;
     height: 80px;
     margin-bottom: 20px;
-  background-color: #d7d9d6;
+  background-color: #F2F2F2;
 border-radius: 10px;
 box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
@@ -19,4 +19,5 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     top: 20px;
     font-size: 30px;
     font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

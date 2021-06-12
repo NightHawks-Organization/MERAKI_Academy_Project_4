@@ -7,8 +7,6 @@
     color: white;
 }
 
-
-
 .appointment{
     border: black solid 1px;
     display: flex;
@@ -18,7 +16,7 @@
    min-height: 15%;
     row-gap:50px;
     align-content: center;
-    background-color: rgba(135, 207, 235, 0.438);
+    background-color: #5195c070;
     border-radius: 5px;
 }
 .appointment>span{

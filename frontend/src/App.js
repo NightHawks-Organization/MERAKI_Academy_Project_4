@@ -1,6 +1,7 @@
 
 import React,{useState,useEffect} from "react";
 import { Route } from "react-router-dom";
+import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 
 import Header from "./components/header/index";
 import Main from "./components/main/index";
