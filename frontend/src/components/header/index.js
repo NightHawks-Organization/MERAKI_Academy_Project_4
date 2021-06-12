@@ -13,7 +13,7 @@ const logout=()=>{
 }
 
 	return <div className="header">
-		<span className='clinicName'>Clinic Name </span>
+		<span className='clinicName'>Access Medical Clinic</span>
 		{token
 		?<span className='logout' onClick={logout}>logout</span>
 		:<Redirect to='/login'/>}

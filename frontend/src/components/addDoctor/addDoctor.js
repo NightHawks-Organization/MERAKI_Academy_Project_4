@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 
 import Messages from '../auth/Messages'
 
+import './addDoctor.css'
 const axios = require('axios').default;
 
 const NewDoctor= ({token,role}) => {

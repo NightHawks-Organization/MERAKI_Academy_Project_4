@@ -88,7 +88,7 @@ export default function Register() {
           />
         </div>
         <div>
-          <label>phon Number</label>
+          <label>Phone Number</label>
           <input
             type="text"
             placeholder=" Enter phone Number "
@@ -108,7 +108,7 @@ export default function Register() {
           />
         </div>
         <div>
-          <label>Email</label>
+          <label>E-mail</label>
           <input
             type="text"
             placeholder="Enter Email "
@@ -118,7 +118,7 @@ export default function Register() {
           />{" "}
         </div>
         <div>
-          <label>password</label>
+          <label>Password</label>
           <input
             type="password"
             placeholder="Enter password  "

@@ -1,0 +1,17 @@
+.addDoctor {
+    font-size: x-large;
+    font-family: "Courier New", Courier, monospace;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center; */
+    padding-top: 9%;
+    width: 78%;
+    row-gap: 5px;
+    border-radius: 10px;
+    margin-left: 20px;
+    background-color: #F2F2F2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-family: 'Times New Roman', Times, serif;
+  }

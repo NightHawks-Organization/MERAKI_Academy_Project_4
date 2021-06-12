@@ -17,10 +17,10 @@ const Footer = () => {
 
   return (
     <div id="footer">
-      <Link to="/AboutUs" style={{ textDecoration: "none" }}><Route path="/AboutUs" render={() => <AboutUs />} />
+      <Link to="/AboutUs"  className='footerLink' style={{ textDecoration: "none" }}><Route path="/AboutUs" render={() => <AboutUs />} />
         <div className="link">About Us</div>
       </Link>
-      <Link to="/ContactUs" style={{ textDecoration: "none" }}><Route path="/ContactUs" render={() => <ContactUs />} />
+      <Link to="/ContactUs" className='footerLink' style={{ textDecoration: "none" }}><Route path="/ContactUs" render={() => <ContactUs />} />
         <div className="link">Contact Us</div>
       </Link>
       <div id ="social">

@@ -6,16 +6,18 @@
   justify-content: space-between;
 }
 
-.link {
+.linkN {
   text-decoration: none;
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  background-color: #d7d9d6;
-  
+  background-color: #F2F2F2;
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
 }
-.link:hover {
+.linkN:hover {
     background-color: #d7d9d6;
     background-color: #bfc7d9;
     cursor: pointer;
@@ -24,7 +26,7 @@
     transition: ease 0.25s transform;
     transform: translateX(7px);
 }
-.link:active {
+.linkN:active {
   transition: ease 0.1s transform;
   transform: translateY(1.5px);
 }

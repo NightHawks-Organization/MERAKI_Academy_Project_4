@@ -9,11 +9,11 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 const PreFooter = () => {
   return (
-    <div className="prefooter">
+    <div className="prefoooter">
       <Splide
         options={{
           rewind: true,
-          width: 1210,
+          width: 1500,
           gap: "1rem",
           type: "loop",
         }}
@@ -149,10 +149,7 @@ const PreFooter = () => {
               accuracy for non-invasive blood pressure readings in clinic. However, semi-automated methods have become common,
             largely due to concerns about potential mercury toxicity, although cost, ease of use and applicability to ambulatory
             blood pressure or home blood pressure measurements have also influenced this trend.
-            Early automated alternatives to mercury-tube sphygmomanometers were often seriously inaccurate, but modern devices 
-            validated to international standards achieve an average difference between two standardized reading methods of 5 
-            mm Hg or less, and a standard deviation of less than 8 mm Hg. Most of these semi-automated methods measure blood 
-            pressure using oscillometry."
+            "
                 min={80}
                 ideal={100}
                 max={200}

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
+import '../DoctorsList/DoctorsList.css'
 const Doctor = ({name,specialty}) => {
     return (<>
         <div className="doctor">
@@ -39,8 +40,8 @@ const getAllDoctors=()=>{
     return (<>
         <div className="doctors">
     {doctors.map((elem,i)=>(<Doctor key={i} name={elem.name} specialty={elem.specialty}/>))}
+    {token?<button><Link to='/addDoctor'>Add Doctor</Link></button>:null}
     </div>
-    {token?<Link to='/addDoctor'>Add Doctor</Link>:null}
     </>
     )
 }
