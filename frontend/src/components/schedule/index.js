@@ -35,7 +35,8 @@ const Schedule = ({userId}) => {
 // 				},
 //               { _id: 60c1167987eaa45894158d70,
 // 				  date: 'Mon May 24 2021 00:00:00 GMT+0400 (Gulf Standard Time)'}]
-
+console.log(response.data);
+if(response.data){setTaken('Appointment available')}
 	const found = response.data.find((elem,i)=>{
 	return elem.date===dateAndTime
 	})
@@ -84,14 +85,12 @@ const Schedule = ({userId}) => {
 		getAllDoctors();
 	  }, []);
 
-	return <div className="schedule"><h1>schedule component</h1>
+	return <div className="schedule"><h1>Schedule Appointment</h1>
 	<form>
-		<p>please enter your appointment date and time </p>
-		<p>work hours from 8:00 am to 3:00 pm</p>
-		<input style={{display:"inline"}} type='date'  min="2021-06-10" required onChange={(e) => {setDate(e.target.value);}}/>
-		<input style={{display:"inline"}} type='time'  min="08:00" max="17:00" step="1800" required onChange={(e) => {setTime(e.target.value);}}/>
-		
-		<select onChange={(e) => {setDoctorId(e.target.value);}}>
+		<p>please enter below your appointment's date and time </p>
+		<p>Our working hours are from 8:00 am to 5:00 pm</p>
+		<select id = "select" onChange={(e) => {setDoctorId(e.target.value);}}>
+		<option value="">Select doctor...</option>
         {doctorsDB.map((elem, i) => {
           return (
             <option key={i} value={`${elem._id}`} >
@@ -101,16 +100,19 @@ const Schedule = ({userId}) => {
           );
         })}
       </select>
-
-		<input style={{display:"inline" , width:'120px'}} type="submit" value='check validity'/>
-		<input style={{display:"inline", width:'120px'}} type="button" onClick={checkAvailability} value='check availability'/>
-		{taken==='Appointment available'?<button type='button' style={{display:"block"}} onClick={addAppointment}>Schedule now</button>:null}
-		</form>
+		<input id = "date" style={{display:"inline"}} type='date'  min="2021-06-10" required onChange={(e) => {setDate(e.target.value);}}/>
+		<input id = "time" style={{display:"inline"}} type='time'  min="08:00" max="17:00" step="1800" required onChange={(e) => {setTime(e.target.value);}}/>
+		<br/>
+		<input id = "validity" style={{display:"inline" , width:'120px'}} type="submit" value='check validity'/>
+		<input id = "availability" style={{display:"inline", width:'120px'}} type="button" onClick={checkAvailability} value='check availability'/>
 		{taken==='Appointment taken'
 		?<Messages className='failMessage' text={taken}/>
 		:taken==='Appointment available'
 		?<Messages className='successMessage' text={taken}/>
 		:null}
+		{taken==='Appointment available'?<button id="Schedulenow" type='button' style={{display:"block"}} onClick={addAppointment}>Schedule now</button>:null}
+		</form>
+		
 		{shceduled?<Redirect to="/appointments" />:null}
 	</div>;
 };

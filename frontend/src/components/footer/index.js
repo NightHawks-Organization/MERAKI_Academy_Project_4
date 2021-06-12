@@ -13,7 +13,7 @@ import {
 
 
 const Footer = () => {
-	let iconStyles = { color: "black", fontSize: "2.5em" , };
+	let iconStyles = { color: "white", fontSize: "2.5em" , };
 
   return (
     <div id="footer">

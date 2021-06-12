@@ -39,9 +39,9 @@ const getAllDoctors=()=>{
 }
     return (<>
         <div className="doctors">
-    {doctors.map((elem,i)=>(<Doctor key={i} name={elem.name} specialty={elem.specialty}/>))}
-    {token?<button className='createDoc'><Link className='doc' to='/addDoctor'>Add Doctor</Link></button>:null}
+    {doctors.map((elem,i)=>(<h4><Doctor key={i} name={elem.name} specialty={elem.specialty}/></h4>))}
     </div>
+    {token?<button className='createDoc'><Link className='doc' to='/addDoctor'>+</Link></button>:null}
     </>
     )
 }

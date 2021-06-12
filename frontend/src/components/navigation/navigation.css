@@ -12,14 +12,15 @@
   padding-bottom: 12px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  background-color: #F2F2F2;
+  background-color: #0D4373;
   font-size: 22px;
-  color: black;
+  color: white;
   font-weight: bold;
 }
 .linkN:hover {
     background-color: #d7d9d6;
     background-color: #bfc7d9;
+    color: black;
     cursor: pointer;
     border: outset 0.5px;
     border-radius: 10px;

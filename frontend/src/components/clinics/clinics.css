@@ -11,7 +11,7 @@
   row-gap: 10px;
   border-radius: 10px;
   margin-left: 20px;
-  background-color: #F2F2F2;
+  background-color: #bfc7d9;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -28,6 +28,6 @@ h2 {
   margin-right: auto;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  background-color: #5195c070;
+  background-color: #0d43735d;
 
 }
